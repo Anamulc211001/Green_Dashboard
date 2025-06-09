@@ -30,7 +30,10 @@ const Header: React.FC<HeaderProps> = ({
             <div className="w-8 h-8 bg-gradient-green rounded-lg flex items-center justify-center">
               <div className="w-4 h-4 bg-white rounded-sm"></div>
             </div>
-            <h1 className="text-xl font-bold text-gray-900">Analytics Dashboard</h1>
+            <div>
+              <h1 className="text-xl font-bold text-gray-900">Analytics Dashboard</h1>
+              <p className="text-xs text-gray-500">by Md Anamul Haque</p>
+            </div>
           </div>
         </div>
         

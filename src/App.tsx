@@ -9,6 +9,7 @@ import Notifications from './pages/Notifications';
 import Settings from './pages/Settings';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import { DashboardProvider } from './context/DashboardContext';
 import { TimeRange } from './types';
 
@@ -19,7 +20,7 @@ function App() {
   return (
     <DashboardProvider>
       <Router>
-        <div className="min-h-screen bg-gray-50 text-gray-900 flex flex-col">
+        <div className="min-h-screen bg-white text-gray-900 flex flex-col">
           <Header 
             sidebarOpen={sidebarOpen} 
             setSidebarOpen={setSidebarOpen}
@@ -40,6 +41,7 @@ function App() {
               </Routes>
             </main>
           </div>
+          <Footer />
         </div>
       </Router>
     </DashboardProvider>

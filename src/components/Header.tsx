@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="mr-4 p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+            className="mr-4 p-2 rounded-lg text-gray-500 hover:text-green-700 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
           >
             {sidebarOpen ? <X size={20} /> : <MenuIcon size={20} />}
           </button>
@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({
             onChange={setTimeRange} 
           />
           
-          <button className="flex items-center gap-2 px-4 py-2 bg-gradient-green hover:from-green-600 hover:to-green-700 rounded-lg text-white text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md">
+          <button className="flex items-center gap-2 px-4 py-2 bg-gradient-green hover:bg-gradient-green-dark rounded-lg text-white text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md">
             <Download size={16} />
             <span>Export</span>
           </button>

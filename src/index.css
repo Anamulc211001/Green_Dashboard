@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-50 text-gray-900;
+  @apply bg-white text-gray-900;
 }
 
 /* Custom scrollbar */
@@ -17,11 +17,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 rounded-full;
+  @apply bg-green-300 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-400;
+  @apply bg-green-400;
 }
 
 /* Animation for chart hover */
@@ -43,6 +43,10 @@ body {
   background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
 }
 
+.bg-gradient-green-dark {
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+}
+
 /* Hover effects */
 .hover-lift {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -50,5 +54,13 @@ body {
 
 .hover-lift:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+}
+
+/* Custom green focus styles */
+.focus-green:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: rgb(16 185 129);
+  border-color: rgb(16 185 129);
 }

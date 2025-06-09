@@ -37,7 +37,7 @@ const Settings: React.FC = () => {
       passwordExpiry: '90'
     },
     appearance: {
-      theme: 'dark',
+      theme: 'light',
       sidebarCollapsed: false,
       compactMode: false,
       animations: true
@@ -70,49 +70,49 @@ const Settings: React.FC = () => {
   const renderProfileSettings = () => (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-medium text-white mb-4">Profile Information</h3>
+        <h3 className="text-lg font-medium text-gray-900 mb-4">Profile Information</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Full Name
             </label>
             <input
               type="text"
               value={settings.profile.name}
               onChange={(e) => updateSetting('profile', 'name', e.target.value)}
-              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-green-500 focus:border-green-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Email Address
             </label>
             <input
               type="email"
               value={settings.profile.email}
               onChange={(e) => updateSetting('profile', 'email', e.target.value)}
-              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-green-500 focus:border-green-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Phone Number
             </label>
             <input
               type="tel"
               value={settings.profile.phone}
               onChange={(e) => updateSetting('profile', 'phone', e.target.value)}
-              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-green-500 focus:border-green-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Timezone
             </label>
             <select
               value={settings.profile.timezone}
               onChange={(e) => updateSetting('profile', 'timezone', e.target.value)}
-              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-green-500 focus:border-green-500"
             >
               <option value="America/New_York">Eastern Time</option>
               <option value="America/Chicago">Central Time</option>
@@ -124,33 +124,33 @@ const Settings: React.FC = () => {
       </div>
 
       <div>
-        <h3 className="text-lg font-medium text-white mb-4">Change Password</h3>
+        <h3 className="text-lg font-medium text-gray-900 mb-4">Change Password</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Current Password
             </label>
             <div className="relative">
               <input
                 type={showPassword ? 'text' : 'password'}
-                className="w-full px-3 py-2 pr-10 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full px-3 py-2 pr-10 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-green-500 focus:border-green-500"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
               >
                 {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
               </button>
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               New Password
             </label>
             <input
               type="password"
-              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-green-500 focus:border-green-500"
             />
           </div>
         </div>
@@ -161,15 +161,15 @@ const Settings: React.FC = () => {
   const renderNotificationSettings = () => (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-medium text-white mb-4">Notification Preferences</h3>
+        <h3 className="text-lg font-medium text-gray-900 mb-4">Notification Preferences</h3>
         <div className="space-y-4">
           {Object.entries(settings.notifications).map(([key, value]) => (
-            <div key={key} className="flex items-center justify-between p-4 bg-gray-700/50 rounded-lg">
+            <div key={key} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
               <div>
-                <h4 className="text-white font-medium capitalize">
+                <h4 className="text-gray-900 font-medium capitalize">
                   {key.replace(/([A-Z])/g, ' $1').trim()}
                 </h4>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-600 text-sm">
                   {key === 'emailNotifications' && 'Receive notifications via email'}
                   {key === 'pushNotifications' && 'Receive push notifications in browser'}
                   {key === 'weeklyReports' && 'Get weekly analytics reports'}
@@ -184,7 +184,7 @@ const Settings: React.FC = () => {
                   onChange={(e) => updateSetting('notifications', key, e.target.checked)}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
               </label>
             </div>
           ))}
@@ -196,12 +196,12 @@ const Settings: React.FC = () => {
   const renderSecuritySettings = () => (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-medium text-white mb-4">Security Settings</h3>
+        <h3 className="text-lg font-medium text-gray-900 mb-4">Security Settings</h3>
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-4 bg-gray-700/50 rounded-lg">
+          <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
             <div>
-              <h4 className="text-white font-medium">Two-Factor Authentication</h4>
-              <p className="text-gray-400 text-sm">Add an extra layer of security to your account</p>
+              <h4 className="text-gray-900 font-medium">Two-Factor Authentication</h4>
+              <p className="text-gray-600 text-sm">Add an extra layer of security to your account</p>
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
               <input
@@ -210,19 +210,19 @@ const Settings: React.FC = () => {
                 onChange={(e) => updateSetting('security', 'twoFactorAuth', e.target.checked)}
                 className="sr-only peer"
               />
-              <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+              <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
             </label>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Session Timeout (minutes)
               </label>
               <select
                 value={settings.security.sessionTimeout}
                 onChange={(e) => updateSetting('security', 'sessionTimeout', e.target.value)}
-                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-green-500 focus:border-green-500"
               >
                 <option value="15">15 minutes</option>
                 <option value="30">30 minutes</option>
@@ -231,13 +231,13 @@ const Settings: React.FC = () => {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Password Expiry (days)
               </label>
               <select
                 value={settings.security.passwordExpiry}
                 onChange={(e) => updateSetting('security', 'passwordExpiry', e.target.value)}
-                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-green-500 focus:border-green-500"
               >
                 <option value="30">30 days</option>
                 <option value="60">60 days</option>
@@ -254,10 +254,10 @@ const Settings: React.FC = () => {
   const renderAppearanceSettings = () => (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-medium text-white mb-4">Appearance Settings</h3>
+        <h3 className="text-lg font-medium text-gray-900 mb-4">Appearance Settings</h3>
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Theme
             </label>
             <div className="grid grid-cols-3 gap-2">
@@ -267,8 +267,8 @@ const Settings: React.FC = () => {
                   onClick={() => updateSetting('appearance', 'theme', theme)}
                   className={`p-3 rounded-lg border transition-colors capitalize ${
                     settings.appearance.theme === theme
-                      ? 'border-indigo-500 bg-indigo-500/10 text-indigo-400'
-                      : 'border-gray-600 hover:border-gray-500 text-gray-300'
+                      ? 'border-green-500 bg-green-50 text-green-700'
+                      : 'border-gray-300 hover:border-green-300 text-gray-700'
                   }`}
                 >
                   {theme}
@@ -279,12 +279,12 @@ const Settings: React.FC = () => {
 
           <div className="space-y-4">
             {Object.entries(settings.appearance).filter(([key]) => key !== 'theme').map(([key, value]) => (
-              <div key={key} className="flex items-center justify-between p-4 bg-gray-700/50 rounded-lg">
+              <div key={key} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                 <div>
-                  <h4 className="text-white font-medium capitalize">
+                  <h4 className="text-gray-900 font-medium capitalize">
                     {key.replace(/([A-Z])/g, ' $1').trim()}
                   </h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-600 text-sm">
                     {key === 'sidebarCollapsed' && 'Start with sidebar collapsed'}
                     {key === 'compactMode' && 'Use compact layout for better space utilization'}
                     {key === 'animations' && 'Enable smooth animations and transitions'}
@@ -297,7 +297,7 @@ const Settings: React.FC = () => {
                     onChange={(e) => updateSetting('appearance', key, e.target.checked)}
                     className="sr-only peer"
                   />
-                  <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                  <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
                 </label>
               </div>
             ))}
@@ -310,17 +310,17 @@ const Settings: React.FC = () => {
   const renderDataSettings = () => (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-medium text-white mb-4">Data & Privacy</h3>
+        <h3 className="text-lg font-medium text-gray-900 mb-4">Data & Privacy</h3>
         <div className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Data Retention (days)
               </label>
               <select
                 value={settings.data.dataRetention}
                 onChange={(e) => updateSetting('data', 'dataRetention', e.target.value)}
-                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-green-500 focus:border-green-500"
               >
                 <option value="90">90 days</option>
                 <option value="180">180 days</option>
@@ -329,13 +329,13 @@ const Settings: React.FC = () => {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Export Format
               </label>
               <select
                 value={settings.data.exportFormat}
                 onChange={(e) => updateSetting('data', 'exportFormat', e.target.value)}
-                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-green-500 focus:border-green-500"
               >
                 <option value="json">JSON</option>
                 <option value="csv">CSV</option>
@@ -344,10 +344,10 @@ const Settings: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between p-4 bg-gray-700/50 rounded-lg">
+          <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
             <div>
-              <h4 className="text-white font-medium">Automatic Backup</h4>
-              <p className="text-gray-400 text-sm">Automatically backup your data daily</p>
+              <h4 className="text-gray-900 font-medium">Automatic Backup</h4>
+              <p className="text-gray-600 text-sm">Automatically backup your data daily</p>
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
               <input
@@ -356,20 +356,20 @@ const Settings: React.FC = () => {
                 onChange={(e) => updateSetting('data', 'autoBackup', e.target.checked)}
                 className="sr-only peer"
               />
-              <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+              <div className="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
             </label>
           </div>
 
-          <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
-            <h4 className="text-red-400 font-medium mb-2">Danger Zone</h4>
-            <p className="text-gray-400 text-sm mb-4">
+          <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+            <h4 className="text-red-700 font-medium mb-2">Danger Zone</h4>
+            <p className="text-red-600 text-sm mb-4">
               These actions are irreversible. Please proceed with caution.
             </p>
             <div className="space-y-2">
               <button className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors">
                 Export All Data
               </button>
-              <button className="w-full px-4 py-2 border border-red-600 text-red-400 hover:bg-red-600 hover:text-white rounded-lg transition-colors">
+              <button className="w-full px-4 py-2 border border-red-600 text-red-600 hover:bg-red-600 hover:text-white rounded-lg transition-colors">
                 Delete Account
               </button>
             </div>
@@ -399,12 +399,12 @@ const Settings: React.FC = () => {
   return (
     <div className="space-y-6 pb-6">
       <section>
-        <h2 className="text-2xl font-bold mb-6">Settings</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Settings</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Settings Navigation */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-800 rounded-lg border border-gray-700 p-4">
+            <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-4">
               <nav className="space-y-1">
                 {tabs.map((tab) => (
                   <button
@@ -412,8 +412,8 @@ const Settings: React.FC = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-colors ${
                       activeTab === tab.id
-                        ? 'bg-indigo-600 text-white'
-                        : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                        ? 'bg-green-600 text-white'
+                        : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
                     }`}
                   >
                     {tab.icon}
@@ -426,15 +426,15 @@ const Settings: React.FC = () => {
 
           {/* Settings Content */}
           <div className="lg:col-span-3">
-            <div className="bg-gray-800 rounded-lg border border-gray-700 p-6">
+            <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
               {renderTabContent()}
               
-              <div className="mt-8 pt-6 border-t border-gray-700">
+              <div className="mt-8 pt-6 border-t border-gray-200">
                 <div className="flex items-center justify-between">
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-600 text-sm">
                     Changes are saved automatically
                   </p>
-                  <button className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
                     <Save size={16} />
                     Save Changes
                   </button>

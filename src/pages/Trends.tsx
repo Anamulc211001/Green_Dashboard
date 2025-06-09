@@ -64,7 +64,7 @@ const Trends: React.FC<TrendsProps> = ({ timeRange }) => {
   return (
     <div className="space-y-6 pb-6">
       <section>
-        <h2 className="text-2xl font-bold mb-6">Trends & Insights</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Trends & Insights</h2>
         
         {/* Trend Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
@@ -74,20 +74,20 @@ const Trends: React.FC<TrendsProps> = ({ timeRange }) => {
               onClick={() => setSelectedMetric(metric.id)}
               className={`p-4 rounded-lg border transition-all ${
                 selectedMetric === metric.id
-                  ? 'border-indigo-500 bg-indigo-500/10'
-                  : 'border-gray-700 bg-gray-800 hover:border-gray-600'
+                  ? 'border-green-500 bg-green-50'
+                  : 'border-gray-200 bg-white hover:border-green-300'
               }`}
             >
               <div className="flex items-center justify-between mb-2">
-                <span className="text-gray-400 text-sm">{metric.name}</span>
-                <span className={`p-1 rounded ${selectedMetric === metric.id ? 'text-indigo-400' : 'text-gray-400'}`}>
+                <span className="text-gray-600 text-sm">{metric.name}</span>
+                <span className={`p-1 rounded ${selectedMetric === metric.id ? 'text-green-600' : 'text-gray-400'}`}>
                   {metric.icon}
                 </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-xl font-bold text-white">{metric.value}</span>
+                <span className="text-xl font-bold text-gray-900">{metric.value}</span>
                 <div className={`flex items-center text-sm ${
-                  metric.change >= 0 ? 'text-emerald-500' : 'text-red-500'
+                  metric.change >= 0 ? 'text-green-600' : 'text-red-500'
                 }`}>
                   {metric.change >= 0 ? (
                     <ArrowUpRight size={14} className="mr-1" />
@@ -111,26 +111,26 @@ const Trends: React.FC<TrendsProps> = ({ timeRange }) => {
       {/* Insights and Forecasts */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* AI Insights */}
-        <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-          <h3 className="text-lg font-medium text-white mb-4 flex items-center gap-2">
-            <Zap className="text-yellow-500" size={20} />
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+          <h3 className="text-lg font-medium text-gray-900 mb-4 flex items-center gap-2">
+            <Zap className="text-green-500" size={20} />
             AI-Powered Insights
           </h3>
           <div className="space-y-4">
             {insights.map((insight, index) => (
-              <div key={index} className="p-4 bg-gray-700/50 rounded-lg">
+              <div key={index} className="p-4 bg-gray-50 rounded-lg">
                 <div className="flex items-start justify-between mb-2">
-                  <h4 className="text-white font-medium">{insight.title}</h4>
+                  <h4 className="text-gray-900 font-medium">{insight.title}</h4>
                   <div className="flex items-center gap-2">
                     <span className={`px-2 py-1 rounded-full text-xs ${
                       insight.impact === 'High' 
-                        ? 'bg-red-500/20 text-red-400' 
-                        : 'bg-yellow-500/20 text-yellow-400'
+                        ? 'bg-red-100 text-red-600' 
+                        : 'bg-yellow-100 text-yellow-600'
                     }`}>
                       {insight.impact}
                     </span>
                     <span className={`${
-                      insight.trend === 'positive' ? 'text-emerald-500' : 'text-red-500'
+                      insight.trend === 'positive' ? 'text-green-500' : 'text-red-500'
                     }`}>
                       {insight.trend === 'positive' ? (
                         <TrendingUp size={16} />
@@ -140,40 +140,40 @@ const Trends: React.FC<TrendsProps> = ({ timeRange }) => {
                     </span>
                   </div>
                 </div>
-                <p className="text-gray-300 text-sm">{insight.description}</p>
+                <p className="text-gray-600 text-sm">{insight.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Forecasts */}
-        <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-          <h3 className="text-lg font-medium text-white mb-4 flex items-center gap-2">
-            <Activity className="text-blue-500" size={20} />
+        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+          <h3 className="text-lg font-medium text-gray-900 mb-4 flex items-center gap-2">
+            <Activity className="text-green-500" size={20} />
             30-Day Forecasts
           </h3>
           <div className="space-y-4">
             {forecasts.map((forecast, index) => (
-              <div key={index} className="p-4 bg-gray-700/50 rounded-lg">
+              <div key={index} className="p-4 bg-gray-50 rounded-lg">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-gray-300 font-medium">{forecast.metric}</span>
-                  <span className="text-xs text-gray-400">
+                  <span className="text-gray-700 font-medium">{forecast.metric}</span>
+                  <span className="text-xs text-gray-500">
                     {forecast.confidence} confidence
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm text-gray-400">Current</div>
-                    <div className="text-white font-medium">{forecast.current}</div>
+                    <div className="text-sm text-gray-500">Current</div>
+                    <div className="text-gray-900 font-medium">{forecast.current}</div>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm text-gray-400">Predicted</div>
-                    <div className="text-emerald-400 font-medium">{forecast.predicted}</div>
+                    <div className="text-sm text-gray-500">Predicted</div>
+                    <div className="text-green-600 font-medium">{forecast.predicted}</div>
                   </div>
                 </div>
-                <div className="mt-2 w-full bg-gray-600 rounded-full h-1">
+                <div className="mt-2 w-full bg-gray-200 rounded-full h-1">
                   <div 
-                    className="bg-emerald-500 h-1 rounded-full"
+                    className="bg-green-500 h-1 rounded-full"
                     style={{ width: forecast.confidence }}
                   ></div>
                 </div>

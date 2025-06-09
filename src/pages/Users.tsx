@@ -25,9 +25,9 @@ const Users: React.FC<UsersProps> = ({ timeRange }) => {
   const [selectedFilter, setSelectedFilter] = useState('all');
 
   const userStats = [
-    { label: 'Total Users', value: '12,583', change: '+8.1%', icon: <UsersIcon className="text-green-500" size={20} /> },
+    { label: 'Total Users', value: '12,583', change: '+8.1%', icon: <UsersIcon className="text-green-500\" size={20} /> },
     { label: 'New Users', value: '1,247', change: '+12.3%', icon: <UserPlus className="text-green-500" size={20} /> },
-    { label: 'Active Users', value: '8,432', change: '+5.7%', icon: <Activity className="text-green-500" size={20} /> },
+    { label: 'Active Users', value: '8,432', change: '+5.7%', icon: <Activity className="text-green-500\" size={20} /> },
     { label: 'User Growth', value: '15.2%', change: '+2.1%', icon: <TrendingUp className="text-green-500" size={20} /> },
   ];
 
